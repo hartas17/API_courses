@@ -4,8 +4,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from api.auth_middleware import is_proffesor, login_required
-from api.models import Courses
-from api.serializers import CoursesSerializer
+from api.models import Courses, LogScoreStudent, ScoreStudent
+from api.serializers import CoursesSerializer, AddLessonsSerializer
 
 
 def order_course(id):
@@ -27,8 +27,7 @@ def courses_list(request):
 
 @is_proffesor
 def add_courses(request):
-    request.POST._mutable = True
-    serializer = CoursesSerializer(data=request.data)
+    serializer = AddLessonsSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
 
@@ -42,7 +41,7 @@ def courses_detail(request, pk):
     try:
         item = Courses.objects.get(pk=pk)
     except Courses.DoesNotExist:
-        return Response(dict(success=False, errors=['No existe ese Curso']),status=400)
+        return Response(dict(success=False, errors=['No existe ese Curso']), status=400)
 
     if request.method == 'GET':
         serializer = CoursesSerializer(item)
@@ -55,12 +54,22 @@ def courses_detail(request, pk):
 @is_proffesor
 def edit_course(request, item):
     if request.method == 'PUT':
-        serializer = CoursesSerializer(item, data=request.data)
+        serializer = CoursesSerializer(item, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response(dict(success=True,data=serializer.data))
+            return Response(dict(success=True, data=serializer.data))
         return Response(dict(success=False, errors=[serializer.errors]), status=400)
 
     elif request.method == 'DELETE':
         item.delete()
         return Response(status=204)
+
+
+@login_required
+@is_proffesor
+@api_view(['GET'])
+def courses_user_can_access(request, course):
+    students_pass_course = set(LogScoreStudent.objects.filter(course=course).values_list('student', flat=True))
+    student_actualy_course = set(ScoreStudent.objects.filter(course=course).values_list('student', flat=True))
+    resp = (students_pass_course | student_actualy_course)
+    return Response(dict(success=True, data=resp), status=200)

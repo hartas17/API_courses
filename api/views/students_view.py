@@ -4,8 +4,8 @@ import logging
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from api.models import Students
-from api.serializers import StudentsSerializer
+from api.models import Students, ScoreStudent, Courses, Lessons
+from api.serializers import StudentsSerializer, GetStudentsSerializer
 from api.auth_middleware import login_required, is_proffesor, login_and_is_owner
 from django.core.validators import validate_email
 from django.http import JsonResponse
@@ -59,6 +59,25 @@ def check_errors_create_account(username, firstname, email, password):
     return errors
 
 
+""""student = models.ForeignKey(Students, on_delete=models.CASCADE)
+    course = models.ForeignKey(Courses, on_delete=models.SET_NULL, null=True)
+    score = models.IntegerField(default=0)
+    created = models.DateTimeField(db_column='created', auto_now_add=True)
+    updated = models.DateTimeField(db_column='updated', auto_now=True)"""
+
+
+def create_student_score(new_user):
+    item_course = None
+    item_lesson = None
+    try:
+        item_course = Courses.objects.get(previous_one=None)
+        item_lesson = Lessons.objects.get(previous_one=None, course=item_course.pk)
+    except Exception as e:
+        print e
+    ScoreStudent(student=new_user, course=item_course, lesson=item_lesson, score=0).save()
+    pass
+
+
 @api_view(['POST'])
 def register_students(request):
     if request.method == 'POST':
@@ -84,6 +103,7 @@ def register_students(request):
 
             # We return the response
             # We need to use unsafe mode to return a list of errors
+        create_student_score(new_user)
         return JsonResponse(response, safe=False, status=status, content_type='application/json')
 
 
@@ -142,8 +162,8 @@ def check_errors_login(username, password):
 def students_list(request):
     if request.method == 'GET':
         items = Students.objects.all()
-        serializer = StudentsSerializer(items, many=True)
-        return Response({'success': True, 'data':serializer.data})
+        serializer = GetStudentsSerializer(items, many=True)
+        return Response({'success': True, 'data': serializer.data})
 
 
 @csrf_exempt
@@ -156,7 +176,7 @@ def students_detail(request, pk):
         return Response({'success': False, 'errors': ['No existe ese usuario']}, status=400)
 
     if request.method == 'GET':
-        serializer = StudentsSerializer(item)
+        serializer = GetStudentsSerializer(item)
         return Response({'success': True, 'data': serializer.data})
     else:
         return manage_student_info(request, item)

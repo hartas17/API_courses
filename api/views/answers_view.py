@@ -1,8 +1,11 @@
+# -*- coding: utf-8 -*-
+
+import ast
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from api.auth_middleware import login_required, is_proffesor
-from api.models import Answers
+from api.models import Answers, Questions
 from api.serializers import AnswersSerializer
 
 
@@ -12,45 +15,64 @@ def answers_list(request):
     if request.method == 'GET':
         items = Answers.objects.all()
         serializer = AnswersSerializer(items, many=True)
-        return Response(serializer.data)
+        return Response(dict(success=True, data=serializer.data))
 
     elif request.method == 'POST':
-        add_answer(request)
+        return add_answer(request)
 
 
 @is_proffesor
 def add_answer(request):
-    serializer = AnswersSerializer(data=request.data)
-    if serializer.is_valid():
-        serializer.save()
-        return Response(serializer.data, status=201)
-    return Response(serializer.errors, status=400)
+    """Metodo para agregar preguntas, en caso de ser tipo BO, en corrects solo se acepta [0] para respuestas False y
+    [1] para respuestas True """
+    question = request.POST.get("question", "")
+    values = ast.literal_eval(request.POST.get("values", ""))
+    corrects = ast.literal_eval(request.POST.get("corrects", ""))
+    if len(corrects) < 1:
+        return Response(dict(success=False, error=["Debe agregar al menos una respuesta correcta"]), status=400)
+    cont = 1
+    try:
+        item_queston = Questions.objects.get(pk=question)
+        Answers.objects.filter(question=question).delete()
+        if item_queston.type == "BO":
+            Answers(question=item_queston, value=corrects[0] == True, correct=True).save()
+            Answers(question=item_queston, value=corrects[0] != True, correct=False).save()
+            return Response(status=204)
+    except Questions.DoesNotExist:
+        return Response(dict(success=False, error=["No se encuentra la pregunta"]), status=400)
+    for answer in values:
+        try:
+            if cont in corrects:
+                answer = Answers(question=item_queston, value=answer, correct=True)
+            else:
+                answer = Answers(question=item_queston, value=answer, correct=False)
+            answer.save()
+        except Exception as e:
+            print e
+        cont += 1
+    return Response(status=204)
 
 
 @login_required
-@api_view(['GET', 'PUT', 'DELETE'])
-def answers_detail(request, pk):
+@api_view(['GET', 'DELETE'])
+def answers_detail(request, question):
     try:
-        item = Answers.objects.get(pk=pk)
+        items = Answers.objects.filter(question=question)
+        if len(items) < 1:
+            return Response(dict(success=False, error=["No se encuentran respuesta a esa pregunta"]), status=400)
+
     except Answers.DoesNotExist:
-        return Response(status=400)
+        return Response(dict(success=False, error=["No se encuentra esa respuesta"]), status=400)
 
     if request.method == 'GET':
-        serializer = AnswersSerializer(item)
-        return Response(serializer.data)
+        serializer = AnswersSerializer(items, many=True)
+        return Response(dict(success=True, data=serializer.data))
     else:
-        update_anser(request, item)
+        return dete_answer(request, items)
 
 
 @is_proffesor
-def update_anser(request, item):
-    if request.method == 'PUT':
-        serializer = AnswersSerializer(item, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=400)
-
-    elif request.method == 'DELETE':
-        item.delete()
+def dete_answer(request, items):
+    if request.method == 'DELETE':
+        items.delete()
         return Response(status=204)

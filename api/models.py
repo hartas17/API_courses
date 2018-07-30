@@ -52,8 +52,7 @@ class Users(models.Model):
 
 
 class Students(Users):
-    last_course = models.ForeignKey("Courses", on_delete=models.SET_NULL, blank=True, null=True )
-
+    last_course = models.ForeignKey("Courses", on_delete=models.SET_NULL, blank=True, null=True)
 
     class Meta:
         managed = True
@@ -70,7 +69,7 @@ class Students(Users):
                 'firstname': self.firstname,
                 'email': self.email,
                 'token': self.token,
-                'last_course_id':self.last_course,
+                'last_course_id': self.last_course,
                 }
 
     @classmethod
@@ -98,7 +97,6 @@ class Students(Users):
 
 
 class Professors(Users):
-
     class Meta:
         managed = True
         db_table = 'professors'
@@ -141,8 +139,9 @@ class Professors(Users):
 
 class Courses(models.Model):
     title = models.CharField(max_length=128)
-    previous_one = models.ForeignKey("Courses", related_name="previousOne", blank=True, null=True)
-    next_one = models.ForeignKey("Courses", related_name="nextOne", blank=True, null=True)
+    previous_one = models.ForeignKey("Courses", related_name="previousOne", on_delete=models.SET_NULL, blank=True,
+                                     null=True)
+    next_one = models.ForeignKey("Courses", related_name="nextOne", on_delete=models.SET_NULL, blank=True, null=True)
     created_by = models.ForeignKey(Professors, blank=True, null=True, on_delete=models.SET_NULL)
     created = models.DateTimeField(db_column='created', auto_now_add=True)
     updated = models.DateTimeField(db_column='updated', auto_now=True)
@@ -152,22 +151,42 @@ class Courses(models.Model):
         db_table = 'courses'
 
     def save(self, *args, **kwargs):
+
         try:
-            previous_course = Courses.objects.get(next_one=None)
-            self.previous_one = previous_course
-            super(Courses, self).save(*args, **kwargs)
-            previous_course.next_one = self
-            previous_course.save()
+            if self.id is None:
+                previous_course = Courses.objects.get(next_one=None)
+                self.previous_one = previous_course
+                super(Courses, self).save(*args, **kwargs)
+                previous_course.next_one = self
+                previous_course.save()
+            else:
+                super(Courses, self).save(*args, **kwargs)
         except:
             super(Courses, self).save(*args, **kwargs)
+
+    def delete(self):
+        try:
+            course = Courses.objects.get(pk=self.previous_one.pk)
+            course.next_one = self.next_one
+            course.save()
+        except:
+            pass
+        try:
+            course = Courses.objects.get(pk=self.next_one.pk)
+            course.previous_one = self.previous_one
+            course.save()
+        except:
+            pass
+        super(Courses, self).delete()
 
 
 class Lessons(models.Model):
     title = models.CharField(max_length=128)
     description = models.TextField()
     course = models.ForeignKey(Courses, on_delete=models.CASCADE, blank=True, null=True)
-    previous_one = models.ForeignKey("self", related_name="previousOne", blank=True, null=True)
-    next_one = models.ForeignKey("self", related_name="nextOne", blank=True, null=True)
+    previous_one = models.ForeignKey("Lessons", related_name="previousOne", on_delete=models.SET_NULL, blank=True,
+                                     null=True)
+    next_one = models.ForeignKey("Lessons", related_name="nextOne", blank=True, on_delete=models.SET_NULL, null=True)
     approval_score = models.IntegerField()
     created_by = models.ForeignKey(Professors, blank=True, null=True, on_delete=models.SET_NULL)
     created = models.DateTimeField(db_column='created', auto_now_add=True)
@@ -179,13 +198,31 @@ class Lessons(models.Model):
 
     def save(self, *args, **kwargs):
         try:
-            previous_lesson = Lessons.objects.get(next_one=None)
-            self.previous_one = previous_lesson
-            super(Lessons, self).save(*args, **kwargs)
-            previous_lesson.next_one = self
-            previous_lesson.save()
+            if self.id is None:
+                previous_lesson = Lessons.objects.get(next_one=None, course=self.course)
+                self.previous_one = previous_lesson
+                super(Lessons, self).save(*args, **kwargs)
+                previous_lesson.next_one = self
+                previous_lesson.save()
+            else:
+                super(Lessons, self).save(*args, **kwargs)
         except:
             super(Lessons, self).save(*args, **kwargs)
+
+    def delete(self):
+        try:
+            lesson = Lessons.objects.get(pk=self.previous_one.pk)
+            lesson.next_one = self.next_one
+            lesson.save()
+        except:
+            pass
+        try:
+            lesson = Lessons.objects.get(pk=self.next_one.pk)
+            lesson.previous_one = self.previous_one
+            lesson.save()
+        except:
+            pass
+        super(Lessons, self).delete()
 
 
 class Questions(models.Model):
@@ -200,7 +237,6 @@ class Questions(models.Model):
         (D, 'Multiple choice more than one answer is correct all of them mustbe answered correctly'),
     )
     question = models.TextField()
-    number = models.IntegerField()
     lessons = models.ForeignKey(Lessons, on_delete=models.CASCADE, blank=True, null=True)
     type = models.CharField(max_length=4, choices=TYPE_ANSWER_CHOICE)
     created_by = models.ForeignKey(Professors, blank=True, null=True, on_delete=models.SET_NULL)
@@ -211,6 +247,30 @@ class Questions(models.Model):
     class Meta:
         managed = True
         db_table = 'questions'
+
+
+class LogQuestionUser(models.Model):
+    user = models.ForeignKey(Students, on_delete=models.CASCADE, blank=True, null=True)
+    question = models.ForeignKey(Questions, on_delete=models.SET_NULL, blank=True, null=True)
+    lesson = models.ForeignKey(Lessons,on_delete=models.SET_NULL,blank=True,null=True)
+    correct = models.BooleanField()
+    created = models.DateTimeField(db_column='created', auto_now_add=True)
+    updated = models.DateTimeField(db_column='updated', auto_now=True)
+
+    class Meta:
+        managed = True
+        db_table = 'log_questions_user'
+
+    def save(self, *args, **kwargs):
+        try:
+            if self.correct:
+                score_student = ScoreStudent.objects.get(student=self.user.pk)
+                score_student.score = score_student.score + self.question.score
+                score_student.save()
+            super(LogQuestionUser, self).save(*args, **kwargs)
+        except:
+            pass
+            # super(LogQuestionUser, self).save(*args, **kwargs)
 
 
 class Answers(models.Model):
@@ -228,10 +288,24 @@ class Answers(models.Model):
 class ScoreStudent(models.Model):
     student = models.ForeignKey(Students, on_delete=models.CASCADE)
     course = models.ForeignKey(Courses, on_delete=models.SET_NULL, null=True)
+    lesson = models.ForeignKey(Lessons, on_delete=models.SET_NULL, null=True)
     score = models.IntegerField(default=0)
     created = models.DateTimeField(db_column='created', auto_now_add=True)
     updated = models.DateTimeField(db_column='updated', auto_now=True)
 
     class Meta:
         managed = True
-        db_table = 'scoreStudent'
+        db_table = 'score_student'
+
+
+class LogScoreStudent(models.Model):
+    student = models.ForeignKey(Students, on_delete=models.SET_NULL, null=True)
+    course = models.ForeignKey(Courses, on_delete=models.SET_NULL, null=True)
+    lesson = models.ForeignKey(Lessons, on_delete=models.SET_NULL, null=True)
+    score = models.IntegerField(default=0)
+    created = models.DateTimeField(db_column='created', auto_now_add=True)
+    updated = models.DateTimeField(db_column='updated', auto_now=True)
+
+    class Meta:
+        managed = True
+        db_table = 'log_score_student'
