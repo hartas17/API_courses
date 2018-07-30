@@ -44,7 +44,7 @@ El sistema al registrar un usuario se le asigna un TOKEN:
 
 Para el sistema CRUD, existen endpoint que requieren permiso de Profesor y algunos son para ambos
 
-##Proceso para subir preguntas:
+## Proceso para subir preguntas:
 Primero se sube la pregunta al endpoint
 ```bash
 /api/questions/ 
@@ -126,10 +126,42 @@ lesson = 3
 ````
 
 
+## Proceso para responder preguntas por el estudiante:
+
+El API está diseñado de tal manera que solo se usen 2 enpoint para esta acción
+
+Para obtener la pregunta:
+````
+{{url}}/api/question_for_user/<id_estudiante>
+````
+Este Endpoint hace las siguientes validaciones:
+* Si existe el usuario
+* Si quedan preguntas por contestar
+* Si ya terminaste una lección
+* Si ya se terminó un curso
+* Si quedan cursos por tomar
+* Si tienes suficientes puntos para pasar de lección
+* Asigna el curso siguiente en caso de terminar uno
+* Asigna la lección siguiente en caso de terminar una
+
+Para responder la pregunta:
+````
+{{url}}/api/answer_question/
+````
+
+parámetros:
+````
+student = id_estudiante
+question =  id_pregunta
+response = [id_respuestas]
+````
+Solo se debe envíar una lista con los id de las respuestas que el usuario haya seleccionado
+
+
 ## API
 Total: 37 Enpoints
 
-4 enpoints especificos para las esficicaciones de los Frontend:
+4 enpoints especificos:
 ````
 {{url}}/api/all_answer_in_one_go/
 {{url}}/api/lesson_user_can_access/<id_lesson>
@@ -137,7 +169,7 @@ Total: 37 Enpoints
 {{url}}/api/lesson_detail_answering_question/<id_lesson>
 ````
 
-y los restantes 34 para el CRUD y para acciones espeficipas propias de las reglas propuestas
+y los restantes 34 para el CRUD y para acciones propias de las reglas propuestas
 
 
 ## Acceso a la API:
