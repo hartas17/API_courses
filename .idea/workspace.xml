@@ -76,18 +76,18 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-933">
-                <caret line="171" column="47" lean-forward="false" selection-start-line="171" selection-start-column="47" selection-end-line="171" selection-end-column="47" />
+              <first_editor relative-caret-position="169">
+                <caret line="45" column="19" lean-forward="false" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
                 <folding>
-                  <marker date="1532938007976" expanded="true" signature="4575:5771" ph="{&quot;id&quot;: &quot;47e38430-9583-431a-a2ba-a2384fd2f8b2&quot;...}" />
-                  <marker date="1532938007976" expanded="true" signature="4657:5625" ph="[...]" />
-                  <marker date="1532938007976" expanded="true" signature="4663:4836" ph="{&quot;value&quot;: &quot;http://localhost:8000&quot;...}" />
-                  <marker date="1532938007976" expanded="true" signature="4686:4747" ph="{&quot;content&quot;: &quot;&quot;...}" />
-                  <marker date="1532938007976" expanded="true" signature="4842:4918" ph="{&quot;value&quot;: 6...}" />
-                  <marker date="1532938007976" expanded="true" signature="4924:5185" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hbnVlbCIsInVzZXJfaWQiOjYsImVtYWlsIjoibWFudWVsQGNhbi5jb20iLCJleHAiOjE1NjQzMjk4OTJ9.F4zymoVWqxTuMuGAMXNuizN0RntD3_0rNz7vsrx9Ke0&quot;...}" />
-                  <marker date="1532938007976" expanded="true" signature="5191:5458" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsdW1ub3MiLCJ1c2VyX2lkIjoxMCwiZW1haWwiOiJhbHVtbm9zQG5leGltby5jb20iLCJleHAiOjE1NjQ0NTU3NDl9.XObESP4tOvsw4JoOA_LCYiFsQATrExiATcCJZyXh5lo&quot;...}" />
-                  <marker date="1532938007976" expanded="true" signature="5464:5539" ph="{&quot;value&quot;: 10...}" />
-                  <marker date="1532938007976" expanded="true" signature="5545:5621" ph="{&quot;value&quot;: 11...}" />
+                  <marker date="1532938240273" expanded="true" signature="4919:6115" ph="{&quot;id&quot;: &quot;47e38430-9583-431a-a2ba-a2384fd2f8b2&quot;...}" />
+                  <marker date="1532938240273" expanded="true" signature="5001:5969" ph="[...]" />
+                  <marker date="1532938240273" expanded="true" signature="5007:5180" ph="{&quot;value&quot;: &quot;http://localhost:8000&quot;...}" />
+                  <marker date="1532938240273" expanded="true" signature="5030:5091" ph="{&quot;content&quot;: &quot;&quot;...}" />
+                  <marker date="1532938240273" expanded="true" signature="5186:5262" ph="{&quot;value&quot;: 6...}" />
+                  <marker date="1532938240273" expanded="true" signature="5268:5529" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hbnVlbCIsInVzZXJfaWQiOjYsImVtYWlsIjoibWFudWVsQGNhbi5jb20iLCJleHAiOjE1NjQzMjk4OTJ9.F4zymoVWqxTuMuGAMXNuizN0RntD3_0rNz7vsrx9Ke0&quot;...}" />
+                  <marker date="1532938240273" expanded="true" signature="5535:5802" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsdW1ub3MiLCJ1c2VyX2lkIjoxMCwiZW1haWwiOiJhbHVtbm9zQG5leGltby5jb20iLCJleHAiOjE1NjQ0NTU3NDl9.XObESP4tOvsw4JoOA_LCYiFsQATrExiATcCJZyXh5lo&quot;...}" />
+                  <marker date="1532938240273" expanded="true" signature="5808:5883" ph="{&quot;value&quot;: 10...}" />
+                  <marker date="1532938240273" expanded="true" signature="5889:5965" ph="{&quot;value&quot;: 11...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -103,6 +103,16 @@
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/neximo/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="28">
+              <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="96" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -435,14 +445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neximo/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="46" column="5" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/PycharmProjects/hello_world/venv/Lib/site-packages/django/db/models/fields/related_descriptors.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -609,21 +611,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/neximo/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="96" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-933">
-            <caret line="171" column="47" lean-forward="false" selection-start-line="171" selection-start-column="47" selection-end-line="171" selection-end-column="47" />
+          <first_editor relative-caret-position="169">
+            <caret line="45" column="19" lean-forward="false" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
             <folding>
-              <marker date="1532938007976" expanded="true" signature="4575:5771" ph="{&quot;id&quot;: &quot;47e38430-9583-431a-a2ba-a2384fd2f8b2&quot;...}" />
-              <marker date="1532938007976" expanded="true" signature="4657:5625" ph="[...]" />
-              <marker date="1532938007976" expanded="true" signature="4663:4836" ph="{&quot;value&quot;: &quot;http://localhost:8000&quot;...}" />
-              <marker date="1532938007976" expanded="true" signature="4686:4747" ph="{&quot;content&quot;: &quot;&quot;...}" />
-              <marker date="1532938007976" expanded="true" signature="4842:4918" ph="{&quot;value&quot;: 6...}" />
-              <marker date="1532938007976" expanded="true" signature="4924:5185" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hbnVlbCIsInVzZXJfaWQiOjYsImVtYWlsIjoibWFudWVsQGNhbi5jb20iLCJleHAiOjE1NjQzMjk4OTJ9.F4zymoVWqxTuMuGAMXNuizN0RntD3_0rNz7vsrx9Ke0&quot;...}" />
-              <marker date="1532938007976" expanded="true" signature="5191:5458" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsdW1ub3MiLCJ1c2VyX2lkIjoxMCwiZW1haWwiOiJhbHVtbm9zQG5leGltby5jb20iLCJleHAiOjE1NjQ0NTU3NDl9.XObESP4tOvsw4JoOA_LCYiFsQATrExiATcCJZyXh5lo&quot;...}" />
-              <marker date="1532938007976" expanded="true" signature="5464:5539" ph="{&quot;value&quot;: 10...}" />
-              <marker date="1532938007976" expanded="true" signature="5545:5621" ph="{&quot;value&quot;: 11...}" />
+              <marker date="1532938240273" expanded="true" signature="4919:6115" ph="{&quot;id&quot;: &quot;47e38430-9583-431a-a2ba-a2384fd2f8b2&quot;...}" />
+              <marker date="1532938240273" expanded="true" signature="5001:5969" ph="[...]" />
+              <marker date="1532938240273" expanded="true" signature="5007:5180" ph="{&quot;value&quot;: &quot;http://localhost:8000&quot;...}" />
+              <marker date="1532938240273" expanded="true" signature="5030:5091" ph="{&quot;content&quot;: &quot;&quot;...}" />
+              <marker date="1532938240273" expanded="true" signature="5186:5262" ph="{&quot;value&quot;: 6...}" />
+              <marker date="1532938240273" expanded="true" signature="5268:5529" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hbnVlbCIsInVzZXJfaWQiOjYsImVtYWlsIjoibWFudWVsQGNhbi5jb20iLCJleHAiOjE1NjQzMjk4OTJ9.F4zymoVWqxTuMuGAMXNuizN0RntD3_0rNz7vsrx9Ke0&quot;...}" />
+              <marker date="1532938240273" expanded="true" signature="5535:5802" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsdW1ub3MiLCJ1c2VyX2lkIjoxMCwiZW1haWwiOiJhbHVtbm9zQG5leGltby5jb20iLCJleHAiOjE1NjQ0NTU3NDl9.XObESP4tOvsw4JoOA_LCYiFsQATrExiATcCJZyXh5lo&quot;...}" />
+              <marker date="1532938240273" expanded="true" signature="5808:5883" ph="{&quot;value&quot;: 10...}" />
+              <marker date="1532938240273" expanded="true" signature="5889:5965" ph="{&quot;value&quot;: 11...}" />
             </folding>
           </first_editor>
           <second_editor />

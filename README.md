@@ -21,12 +21,29 @@ Descargar repositorio:
 https://github.com/hartas17/API_courses.git
 ```
 
-Crear DB
+### DB
+Crear DB en MySQL llamada Neximo y posterior
+
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
+O cambia la siguiente linea de código en settings:
+
+````python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'neximo',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+    }
+}
+````
+### Montar servidor
 Correr django:
 ```bash
 python manage.py runserver
