@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11a7debb-9d9f-4c6c-a77d-9ae4638c4146" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/api/models.py" afterPath="$PROJECT_DIR$/api/models.py" />
-      <change beforePath="$PROJECT_DIR$/api/serializers.py" afterPath="$PROJECT_DIR$/api/serializers.py" />
-      <change beforePath="$PROJECT_DIR$/api/urls.py" afterPath="$PROJECT_DIR$/api/urls.py" />
-      <change beforePath="$PROJECT_DIR$/api/views/answers_view.py" afterPath="$PROJECT_DIR$/api/views/answers_view.py" />
-      <change beforePath="$PROJECT_DIR$/api/views/courses_view.py" afterPath="$PROJECT_DIR$/api/views/courses_view.py" />
-      <change beforePath="$PROJECT_DIR$/api/views/lessons_view.py" afterPath="$PROJECT_DIR$/api/views/lessons_view.py" />
-      <change beforePath="$PROJECT_DIR$/api/views/questions_view.py" afterPath="$PROJECT_DIR$/api/views/questions_view.py" />
-      <change beforePath="$PROJECT_DIR$/api/views/scoreStudent_view.py" afterPath="$PROJECT_DIR$/api/views/scoreStudent_view.py" />
-      <change beforePath="$PROJECT_DIR$/api/views/students_view.py" afterPath="$PROJECT_DIR$/api/views/students_view.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -120,18 +110,18 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="118">
-                <caret line="142" column="13" lean-forward="true" selection-start-line="142" selection-start-column="13" selection-end-line="142" selection-end-column="13" />
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
                 <folding>
-                  <marker date="1532937107641" expanded="true" signature="3793:4989" ph="{&quot;id&quot;: &quot;47e38430-9583-431a-a2ba-a2384fd2f8b2&quot;...}" />
-                  <marker date="1532937107641" expanded="true" signature="3875:4843" ph="[...]" />
-                  <marker date="1532937107641" expanded="true" signature="3881:4054" ph="{&quot;value&quot;: &quot;http://localhost:8000&quot;...}" />
-                  <marker date="1532937107641" expanded="true" signature="3904:3965" ph="{&quot;content&quot;: &quot;&quot;...}" />
-                  <marker date="1532937107641" expanded="true" signature="4060:4136" ph="{&quot;value&quot;: 6...}" />
-                  <marker date="1532937107641" expanded="true" signature="4142:4403" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hbnVlbCIsInVzZXJfaWQiOjYsImVtYWlsIjoibWFudWVsQGNhbi5jb20iLCJleHAiOjE1NjQzMjk4OTJ9.F4zymoVWqxTuMuGAMXNuizN0RntD3_0rNz7vsrx9Ke0&quot;...}" />
-                  <marker date="1532937107641" expanded="true" signature="4409:4676" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsdW1ub3MiLCJ1c2VyX2lkIjoxMCwiZW1haWwiOiJhbHVtbm9zQG5leGltby5jb20iLCJleHAiOjE1NjQ0NTU3NDl9.XObESP4tOvsw4JoOA_LCYiFsQATrExiATcCJZyXh5lo&quot;...}" />
-                  <marker date="1532937107641" expanded="true" signature="4682:4757" ph="{&quot;value&quot;: 10...}" />
-                  <marker date="1532937107641" expanded="true" signature="4763:4839" ph="{&quot;value&quot;: 11...}" />
+                  <marker date="1532937340017" expanded="true" signature="3794:4990" ph="{&quot;id&quot;: &quot;47e38430-9583-431a-a2ba-a2384fd2f8b2&quot;...}" />
+                  <marker date="1532937340017" expanded="true" signature="3876:4844" ph="[...]" />
+                  <marker date="1532937340017" expanded="true" signature="3882:4055" ph="{&quot;value&quot;: &quot;http://localhost:8000&quot;...}" />
+                  <marker date="1532937340017" expanded="true" signature="3905:3966" ph="{&quot;content&quot;: &quot;&quot;...}" />
+                  <marker date="1532937340017" expanded="true" signature="4061:4137" ph="{&quot;value&quot;: 6...}" />
+                  <marker date="1532937340017" expanded="true" signature="4143:4404" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hbnVlbCIsInVzZXJfaWQiOjYsImVtYWlsIjoibWFudWVsQGNhbi5jb20iLCJleHAiOjE1NjQzMjk4OTJ9.F4zymoVWqxTuMuGAMXNuizN0RntD3_0rNz7vsrx9Ke0&quot;...}" />
+                  <marker date="1532937340017" expanded="true" signature="4410:4677" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsdW1ub3MiLCJ1c2VyX2lkIjoxMCwiZW1haWwiOiJhbHVtbm9zQG5leGltby5jb20iLCJleHAiOjE1NjQ0NTU3NDl9.XObESP4tOvsw4JoOA_LCYiFsQATrExiATcCJZyXh5lo&quot;...}" />
+                  <marker date="1532937340017" expanded="true" signature="4683:4758" ph="{&quot;value&quot;: 10...}" />
+                  <marker date="1532937340017" expanded="true" signature="4764:4840" ph="{&quot;value&quot;: 11...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -656,18 +646,18 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="118">
-            <caret line="142" column="13" lean-forward="true" selection-start-line="142" selection-start-column="13" selection-end-line="142" selection-end-column="13" />
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
             <folding>
-              <marker date="1532937107641" expanded="true" signature="3793:4989" ph="{&quot;id&quot;: &quot;47e38430-9583-431a-a2ba-a2384fd2f8b2&quot;...}" />
-              <marker date="1532937107641" expanded="true" signature="3875:4843" ph="[...]" />
-              <marker date="1532937107641" expanded="true" signature="3881:4054" ph="{&quot;value&quot;: &quot;http://localhost:8000&quot;...}" />
-              <marker date="1532937107641" expanded="true" signature="3904:3965" ph="{&quot;content&quot;: &quot;&quot;...}" />
-              <marker date="1532937107641" expanded="true" signature="4060:4136" ph="{&quot;value&quot;: 6...}" />
-              <marker date="1532937107641" expanded="true" signature="4142:4403" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hbnVlbCIsInVzZXJfaWQiOjYsImVtYWlsIjoibWFudWVsQGNhbi5jb20iLCJleHAiOjE1NjQzMjk4OTJ9.F4zymoVWqxTuMuGAMXNuizN0RntD3_0rNz7vsrx9Ke0&quot;...}" />
-              <marker date="1532937107641" expanded="true" signature="4409:4676" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsdW1ub3MiLCJ1c2VyX2lkIjoxMCwiZW1haWwiOiJhbHVtbm9zQG5leGltby5jb20iLCJleHAiOjE1NjQ0NTU3NDl9.XObESP4tOvsw4JoOA_LCYiFsQATrExiATcCJZyXh5lo&quot;...}" />
-              <marker date="1532937107641" expanded="true" signature="4682:4757" ph="{&quot;value&quot;: 10...}" />
-              <marker date="1532937107641" expanded="true" signature="4763:4839" ph="{&quot;value&quot;: 11...}" />
+              <marker date="1532937340017" expanded="true" signature="3794:4990" ph="{&quot;id&quot;: &quot;47e38430-9583-431a-a2ba-a2384fd2f8b2&quot;...}" />
+              <marker date="1532937340017" expanded="true" signature="3876:4844" ph="[...]" />
+              <marker date="1532937340017" expanded="true" signature="3882:4055" ph="{&quot;value&quot;: &quot;http://localhost:8000&quot;...}" />
+              <marker date="1532937340017" expanded="true" signature="3905:3966" ph="{&quot;content&quot;: &quot;&quot;...}" />
+              <marker date="1532937340017" expanded="true" signature="4061:4137" ph="{&quot;value&quot;: 6...}" />
+              <marker date="1532937340017" expanded="true" signature="4143:4404" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hbnVlbCIsInVzZXJfaWQiOjYsImVtYWlsIjoibWFudWVsQGNhbi5jb20iLCJleHAiOjE1NjQzMjk4OTJ9.F4zymoVWqxTuMuGAMXNuizN0RntD3_0rNz7vsrx9Ke0&quot;...}" />
+              <marker date="1532937340017" expanded="true" signature="4410:4677" ph="{&quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsdW1ub3MiLCJ1c2VyX2lkIjoxMCwiZW1haWwiOiJhbHVtbm9zQG5leGltby5jb20iLCJleHAiOjE1NjQ0NTU3NDl9.XObESP4tOvsw4JoOA_LCYiFsQATrExiATcCJZyXh5lo&quot;...}" />
+              <marker date="1532937340017" expanded="true" signature="4683:4758" ph="{&quot;value&quot;: 10...}" />
+              <marker date="1532937340017" expanded="true" signature="4764:4840" ph="{&quot;value&quot;: 11...}" />
             </folding>
           </first_editor>
           <second_editor />
