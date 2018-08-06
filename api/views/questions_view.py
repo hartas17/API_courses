@@ -172,11 +172,3 @@ def question_for_user(request, student):
             return Response(dict(success=False, errors=["No alcancaste los puntos para pasar de lección"]), status=400)
     serializer = QuestionsSerializer(questions_not_answered[0])
     return Response(dict(success=True, data=serializer.data), status=200)
-
-
-"""
-student = models.ForeignKey(Students, on_delete=models.SET_NULL, null=True)
-    course = models.ForeignKey(Courses, on_delete=models.SET_NULL, null=True)
-    lesson = models.ForeignKey(Lessons, on_delete=models.SET_NULL, null=True)
-    score = models.IntegerField(default=0)
-    """

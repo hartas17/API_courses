@@ -270,7 +270,7 @@ class LogQuestionUser(models.Model):
             super(LogQuestionUser, self).save(*args, **kwargs)
         except:
             pass
-            # super(LogQuestionUser, self).save(*args, **kwargs)
+            #super(LogQuestionUser, self).save(*args, **kwargs)
 
 
 class Answers(models.Model):

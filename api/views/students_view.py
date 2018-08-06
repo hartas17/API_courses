@@ -59,13 +59,6 @@ def check_errors_create_account(username, firstname, email, password):
     return errors
 
 
-""""student = models.ForeignKey(Students, on_delete=models.CASCADE)
-    course = models.ForeignKey(Courses, on_delete=models.SET_NULL, null=True)
-    score = models.IntegerField(default=0)
-    created = models.DateTimeField(db_column='created', auto_now_add=True)
-    updated = models.DateTimeField(db_column='updated', auto_now=True)"""
-
-
 def create_student_score(new_user):
     item_course = None
     item_lesson = None
