@@ -20,19 +20,20 @@ answered questions to approve it
 10. Only professors can create and manage courses, lessons and questions
 11. Any student can take a course
 12. Initially, we’ll need to support these types of questions:
-	a. Boolean
-	b. Multiple choice where only one answer is correct
-	c. Multiple choice where more than one answer is correct
-	d. Multiple choice where more than one answer is correct and all of them must
+	
+	* Boolean
+	* Multiple choice where only one answer is correct
+	* Multiple choice where more than one answer is correct
+	* Multiple choice where more than one answer is correct and all of them must
 	be answered correctly
 
 13. Frontend guys specifically asked for these endpoints for the students to use:
-	a. Get a list of all courses, telling which ones the student can access
-	b. Get lessons for a course, telling which ones the student can access
-	c. Get lesson details for answering its questions
-	d. Take a lesson (to avoid several requests, they asked to send all answers in
+	* Get a list of all courses, telling which ones the student can access
+	* Get lessons for a course, telling which ones the student can access
+	* Get lesson details for answering its questions
+	* Take a lesson (to avoid several requests, they asked to send all answers in
 	one go)
-	e. Basic CRUD for courses, lessons and questions
+	* Basic CRUD for courses, lessons and questions
 
 Codebase rules:
 1. The API must be developed using Python
