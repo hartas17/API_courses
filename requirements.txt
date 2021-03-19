@@ -26,7 +26,7 @@ html5lib==1.0b10
 httplib2==0.10.3
 idna==2.6
 jdcal==1.3
-Jinja2==2.11.dev0
+Jinja2==2.11.3
 lxml==4.2.1
 Markdown==2.6.11
 MarkupSafe==1.0
