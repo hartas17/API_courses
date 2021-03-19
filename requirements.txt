@@ -14,7 +14,7 @@ django-jet==1.0.7
 django-material==1.1.0
 django-rest-auth==0.9.3
 django-six==1.0.4
-djangorestframework==3.7.7
+djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
 docx2txt==0.6
 drf-generators==0.3.0
