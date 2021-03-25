@@ -47,7 +47,7 @@ python-dateutil==2.7.3
 python-openid==2.2.5
 python-pptx==0.6.5
 pytz==2017.3
-PyYAML==3.12
+PyYAML==5.4
 reportlab==3.4.0
 requests==2.18.4
 requests-oauthlib==0.8.0
