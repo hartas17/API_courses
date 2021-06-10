@@ -3,7 +3,7 @@ beautifulsoup4==4.5.3
 bs4==0.0.1
 certifi==2018.1.18
 chardet==2.3.0
-Django==1.11
+Django==2.2.24
 django-admin==1.1.1
 django-admin-tools==0.8.1
 django-allauth==0.34.0
