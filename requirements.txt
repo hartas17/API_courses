@@ -32,7 +32,7 @@ Markdown==2.6.11
 MarkupSafe==1.0
 mysql-connector-python-rf==2.2.2
 MySQL-python==1.2.5
-numpy==1.14.4
+numpy==1.22.0
 oauthlib==2.0.6
 openpyxl==2.5.0
 pandas==0.23.0
