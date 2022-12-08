@@ -1,7 +1,7 @@
 argcomplete==1.8.2
 beautifulsoup4==4.5.3
 bs4==0.0.1
-certifi==2018.1.18
+certifi==2022.12.7
 chardet==2.3.0
 Django==1.11
 django-admin==1.1.1
